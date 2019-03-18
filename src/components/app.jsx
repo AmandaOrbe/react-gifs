@@ -32,6 +32,20 @@ class App extends Component{
     });
   }
 
+  handleClick = (event) => {
+    console.log(event.target.id)
+    this.setState({
+          selectedGifId: event.target.id
+        })
+  }
+
+
+  changePrincipalGif = (event) => {
+    // this.setState({
+    //       selectedGifId: result.data
+    //     })
+  }
+
   render(){
     return(
       <div>
@@ -44,7 +58,7 @@ class App extends Component{
 
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs}/>
+          <GifList gifs={this.state.gifs} clickFunction= {this.handleClick}/>
         </div>
       </div>
     )

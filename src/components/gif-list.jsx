@@ -4,16 +4,19 @@ import Gif from './gif.jsx';
 
 class GifList extends Component{
 
+
   renderList = () => {
 
-    {return this.props.gifs.map(gif =>  <Gif id={gif.id}  key={gif.id}/>)}
+    {return this.props.gifs.map(gif =>  <Gif id={gif.id}  key={gif.id} clickFunction={this.props.clickFunction}/> )}
 
   }
+
+
 
   render(){
     const gifs = this.props.gifs
     return(
-      <div className="gif-list">
+      <div className="gif-list" >
 
         {this.renderList() }
       </div>
